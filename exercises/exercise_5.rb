@@ -7,4 +7,10 @@ require_relative './exercise_4'
 puts "Exercise 5"
 puts "----------"
 
-# Your code goes here ...
+Store.all.each do |store|
+  puts "#{store.name}: #{store.annual_revenue}"
+end
+
+puts Store.sum("annual_revenue")
+
+puts Store.where("annual_revenue>?",1000000).size
